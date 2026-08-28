@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* ============================================
+   A.M.A BISHI – Custom Theme Configuration
+   ============================================ */
+
+@theme {
+  /* Deep forest green palette */
+  --color-forest-950: #0a1f1a;
+  --color-forest-900: #0f2c24;
+  --color-forest-800: #1a3c34;
+  --color-forest-700: #265248;
+  --color-forest-600: #33695c;
+  --color-forest-500: #418070;
+  --color-forest-400: #5a9e8e;
+  --color-forest-300: #7dbdad;
+  --color-forest-200: #a8d7cb;
+  --color-forest-100: #d4ece5;
+  --color-forest-50: #edf7f4;
+
+  /* Rich gold palette */
+  --color-gold-900: #7a5e0a;
+  --color-gold-800: #9a7710;
+  --color-gold-700: #b8901a;
+  --color-gold-600: #c9a227;
+  --color-gold-500: #d4af37;
+  --color-gold-400: #dfc05a;
+  --color-gold-300: #e8d07d;
+  --color-gold-200: #f0e0a5;
+  --color-gold-100: #f7efd0;
+  --color-gold-50: #fcf8eb;
+
+  /* Cream and warm neutrals */
+  --color-cream-50: #fefdfb;
+  --color-cream-100: #fdf9f0;
+  --color-cream-200: #faf3e0;
+  --color-cream-300: #f5e8c8;
+  --color-cream-400: #edd9a8;
+
+  /* Terracotta accents */
+  --color-terra-600: #b85c3a;
+  --color-terra-500: #cc6b45;
+  --color-terra-400: #d98a6a;
+  --color-terra-300: #e5a98f;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #2d3436;
+  background-color: var(--color-cream-50);
+}
+
+/* Custom scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-forest-600);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest-700);
+}
+
+/* ============================================
+   Utility Animations
+   ============================================ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-600 { animation-delay: 600ms; }
