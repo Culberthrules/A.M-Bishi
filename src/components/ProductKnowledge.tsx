@@ -320,10 +320,6 @@ const ProductKnowledge = () => {
     setTimeout(() => setSelectedItem(null), 300);
   };
 
-  const getEducationForProduct = (productName: string) => {
-    return productEducation.find(edu => edu.product === productName);
-  };
-
   return (
     <section
       id="product-knowledge"
