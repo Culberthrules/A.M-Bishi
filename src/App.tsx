@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Products from './components/Products';
+import ProductKnowledge from './components/ProductKnowledge';
 import Certifications from './components/Certifications';
 import Reviews from './components/Reviews';
 import ContactForm from './components/ContactForm';
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <About />
         <Products />
+        <ProductKnowledge />
         <Certifications />
         <Reviews />
         <ContactForm />
