@@ -28,6 +28,34 @@ const Footer = () => {
     <footer className="bg-forest-950 text-cream-300 relative overflow-hidden">
       <div className="h-1 bg-gradient-to-r from-forest-800 via-gold-500 to-forest-800" />
 
+      {/* High-Contrast Closing CTA Banner */}
+      <div className="bg-gradient-to-r from-forest-900 via-forest-800 to-forest-900 border-b border-white/10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className="font-mono text-xs text-gold-400 font-semibold uppercase tracking-[0.2em] bg-gold-500/10 border border-gold-500/30 px-3.5 py-1.5 rounded-full inline-block mb-4">
+            Start Your Trade Inquiry
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Ready to trade without the guesswork?
+          </h2>
+          <p className="text-cream-200/80 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            Access lab-verified certificate parameters and request competitive bulk export quotes directly from <strong className="text-gold-400">AMA BISHI LTD</strong>.
+          </p>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-forest-950 font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/30 hover:-translate-y-0.5"
+          >
+            Make an Inquiry
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1 – Brand */}

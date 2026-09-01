@@ -4,7 +4,7 @@
  */
 
 export const SITE = {
-  name: 'A.M.A BISHI',
+  name: 'AMA BISHI LTD',
   tagline: 'Pure African Naturals',
 
   phone: {

@@ -194,16 +194,16 @@ const Products = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-10 h-px bg-gold-500/60" />
-            <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-semibold">
-              Our Collection
+            <span className="text-gold-400 text-xs tracking-[0.25em] uppercase font-mono font-semibold">
+              N°02 — Product Catalog
             </span>
             <span className="w-10 h-px bg-gold-500/60" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Our Products
+            Export Commodities
           </h2>
-          <p className="text-xl text-gold-400/80 font-serif italic">
-            Pure. Natural. Authentic. Sourced from Northern Nigeria.
+          <p className="text-xl text-cream-200/80 font-serif italic max-w-2xl mx-auto">
+            Pure, lab-verified African agricultural ingredients sourced directly from Northern Nigeria.
           </p>
         </div>
 
@@ -212,22 +212,32 @@ const Products = () => {
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 hover:bg-white/10 hover:border-gold-500/30 hover:shadow-2xl hover:shadow-gold-500/10 hover:-translate-y-1 ${
+              className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 hover:bg-white/10 hover:border-gold-500/40 hover:shadow-2xl hover:shadow-gold-500/10 hover:-translate-y-1 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
-              {/* Product Image */}
-              <div className="relative h-60 overflow-hidden">
+              {/* Product Image & Badges */}
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/20 to-transparent" />
+                
+                {/* Lab Certificate Badge */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="inline-flex items-center gap-1.5 bg-forest-950/90 border border-gold-500/50 text-gold-300 text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md backdrop-blur-md">
+                    <svg className="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Lab Certificate On File
+                  </span>
+                </div>
               </div>
 
               {/* Product Info */}
