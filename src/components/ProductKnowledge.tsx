@@ -218,7 +218,7 @@ const productEducation: ProductEducation[] = [
       'Store in airtight glass containers at room temperature (18-24°C). Honey naturally preserves itself indefinitely. Keep away from direct sunlight and moisture.',
     hygiene_standards:
       'Unfiltered, unheated, and unpasteurized. Meets international food safety standards. Sourced from registered apiaries with proper sanitation protocols.',
-    quantity_available: '500kg - 2000kg per month depending on season',
+    quantity_available: '10,000kg - 25,000kg per month depending on season',
   },
   {
     product: 'Sesame Seeds',
@@ -230,7 +230,7 @@ const productEducation: ProductEducation[] = [
       'Keep in cool, dry conditions (15-20°C, <70% humidity). Store in breathable bags to prevent moisture accumulation. Use food-grade containers for long-term storage. Shelf life: 12-18 months.',
     hygiene_standards:
       'Triple-cleaned and sorted. Tested for aflatoxins and pesticide residues. Packaged in food-grade, moisture-resistant containers. Complies with international food safety standards.',
-    quantity_available: '2000kg - 5000kg per month',
+    quantity_available: '15,000kg - 50,000kg per month',
   },
   {
     product: 'Soya Beans',
@@ -242,7 +242,7 @@ const productEducation: ProductEducation[] = [
       'Store in sealed containers at 12-18°C with <65% humidity. Protect from pests and moisture. Use airtight bags with oxygen absorbers for extended storage (6-12 months). Keep away from direct light.',
     hygiene_standards:
       'Cleaned, sorted, and tested for contaminants. Packaged in food-grade bags. Non-GMO certified. Meets all international quality and food safety regulations.',
-    quantity_available: '3000kg - 8000kg per month',
+    quantity_available: '20,000kg - 60,000kg per month',
   },
   {
     product: 'Dried Hibiscus',
@@ -254,7 +254,7 @@ const productEducation: ProductEducation[] = [
       'Store in airtight containers away from light and heat. Ideal storage: 15-20°C, <65% humidity. Keep away from strong odors as hibiscus absorbs aromas easily. Shelf life: 12-18 months when properly stored.',
     hygiene_standards:
       'Hand-sorted and cleaned. Free from additives and artificial colorants. Tested for microbial contamination. Packaged in food-grade materials with tamper-proof seals.',
-    quantity_available: '800kg - 2500kg per month',
+    quantity_available: '10,000kg - 30,000kg per month',
   },
   {
     product: 'Arabic Gum',
@@ -266,7 +266,7 @@ const productEducation: ProductEducation[] = [
       'Keep in sealed containers at room temperature (18-24°C) in a dry environment (<60% humidity). Protect from moisture and contamination. Can be stored for several years without degradation.',
     hygiene_standards:
       'Raw gum is sorted and inspected for purity. Tested for heavy metals and microbial content. Meets Pharmacopeial standards. Packaged in food-grade containers.',
-    quantity_available: '500kg - 1500kg per month',
+    quantity_available: '10,000kg - 25,000kg per month',
   },
   {
     product: 'Cassava',
@@ -278,7 +278,7 @@ const productEducation: ProductEducation[] = [
       'Fresh roots: Store at 12-15°C in humid conditions, use within 3-5 days. Cassava flour: Keep in sealed containers at 15-18°C, <65% humidity. Shelf life: 8-12 months. Protect from pests and moisture.',
     hygiene_standards:
       'Roots cleaned and inspected. Flour processed in food-grade facilities. Tested for cyanide levels (compliant with international standards). Packaged in food-grade bags.',
-    quantity_available: 'Fresh roots: 2000kg - 5000kg weekly | Flour: 1000kg - 3000kg monthly',
+    quantity_available: 'Fresh roots: 10,000kg - 30,000kg weekly | Flour: 10,000kg - 30,000kg monthly',
   },
 ];
 

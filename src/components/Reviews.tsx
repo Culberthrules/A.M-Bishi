@@ -14,10 +14,10 @@ interface Review {
 const reviews: Review[] = [
   {
     id: 1,
-    name: 'Ada Okonkwo',
-    location: 'Lagos, Nigeria',
+    name: 'Elena Rostova',
+    location: 'Hamburg, Germany',
     quote:
-      'A.M.A BISHI\'s raw honey is absolutely exceptional — pure, rich, and nothing like what you find in most stores. Their commitment to quality is evident in every jar. Truly the gold standard of African naturals.',
+      'A.M.A BISHI\'s raw honey and acacia gum are of exceptional export grade. Pure, rich, and delivered with full lab testing and batch compliance. They have become our most trusted agricultural supplier in Europe.',
     rating: 5,
   },
   {
@@ -25,15 +25,23 @@ const reviews: Review[] = [
     name: 'James Bennett',
     location: 'London, United Kingdom',
     quote:
-      'I\'ve been sourcing dried hibiscus and sesame seeds from A.M.A BISHI for my restaurant. The quality is consistently outstanding and the communication is always professional. Highly recommended.',
+      'We\'ve been sourcing dried hibiscus and premium sesame seeds from A.M.A BISHI for our beverage manufacturing. Consistently superior purity and prompt international freight logistics.',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Nkechi Eze',
-    location: 'Abuja, Nigeria',
+    name: 'Kenji Takahashi',
+    location: 'Tokyo, Japan',
     quote:
-      'From the arabic gum to the cassava flour, everything from A.M.A BISHI meets the highest standards. They are bridging Africa to the world with integrity and authenticity. A truly remarkable company.',
+      'From non-GMO soya beans to high-grade Arabic gum, every shipment from A.M.A BISHI meets Japan\'s strict import and quality standards. Their reliable large monthly capacity makes them an ideal trade partner.',
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: 'Tariq Al-Mansoor',
+    location: 'Dubai, United Arab Emirates',
+    quote:
+      'We import agricultural raw materials across the Middle East. A.M.A BISHI reliably supplies large monthly volumes above 10,000kg with immaculate phytosanitary certification and professional execution.',
     rating: 5,
   },
 ];
@@ -101,48 +109,50 @@ const Reviews = () => {
             <span className="w-10 h-px bg-gold-500" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
-            What Our Customers Say
+            What Our Global Partners Say
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            Trusted by businesses and individuals across Africa and the UK
+            Trusted by international importers, food processors, and wholesale distributors worldwide
           </p>
         </div>
 
         {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reviews.map((review, index) => (
             <div
               key={review.id}
-              className={`bg-white rounded-2xl p-8 shadow-lg shadow-forest-900/5 border border-forest-100/50 transition-all duration-700 hover:shadow-xl hover:shadow-forest-900/10 hover:-translate-y-1 ${
+              className={`bg-white rounded-2xl p-6 shadow-lg shadow-forest-900/5 border border-forest-100/50 flex flex-col justify-between transition-all duration-700 hover:shadow-xl hover:shadow-forest-900/10 hover:-translate-y-1 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
               }`}
-              style={{ transitionDelay: isVisible ? `${index * 200}ms` : '0ms' }}
+              style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
-              {/* Quote Icon */}
-              <div className="mb-5">
-                <svg
-                  className="w-10 h-10 text-gold-200"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
-                </svg>
+              <div>
+                {/* Quote Icon */}
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-gold-200"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
+                  </svg>
+                </div>
+
+                {/* Star Rating */}
+                <StarRating rating={review.rating} />
+
+                {/* Quote */}
+                <blockquote className="mt-4 mb-6 text-gray-600 leading-relaxed text-sm italic">
+                  "{review.quote}"
+                </blockquote>
               </div>
 
-              {/* Star Rating */}
-              <StarRating rating={review.rating} />
-
-              {/* Quote */}
-              <blockquote className="mt-5 mb-6 text-gray-600 leading-relaxed text-[15px] italic">
-                "{review.quote}"
-              </blockquote>
-
               {/* Reviewer Info */}
-              <div className="border-t border-gray-100 pt-5 flex items-center gap-3">
+              <div className="border-t border-gray-100 pt-4 flex items-center gap-3">
                 {/* Avatar placeholder with initials */}
-                <div className="w-11 h-11 rounded-full bg-forest-800 flex items-center justify-center text-gold-400 font-semibold text-sm shrink-0">
+                <div className="w-10 h-10 rounded-full bg-forest-800 flex items-center justify-center text-gold-400 font-semibold text-xs shrink-0">
                   {review.name
                     .split(' ')
                     .map((n) => n[0])
@@ -150,7 +160,7 @@ const Reviews = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-forest-900 text-sm">{review.name}</p>
-                  <p className="text-xs text-gray-400">{review.location}</p>
+                  <p className="text-xs text-gold-600 font-medium">{review.location}</p>
                 </div>
               </div>
             </div>
