@@ -70,7 +70,7 @@ const galleryItems: ProductGalleryItem[] = [
     description: 'Hibiscus Flower: Harvest & Processing',
     duration: '6:50',
   },
-  // Sesame Seeds - Placeholder (to be updated when video is provided)
+  // Sesame Seeds
   {
     id: 'sesame-1',
     product: 'Sesame Seeds',
@@ -78,7 +78,7 @@ const galleryItems: ProductGalleryItem[] = [
     path: '/images/sesame-seeds.png',
     description: 'Premium Sesame Seeds',
   },
-  // Soya Beans - Placeholder (to be updated when video is provided)
+  // Soya Beans
   {
     id: 'soya-1',
     product: 'Soya Beans',
@@ -90,120 +90,25 @@ const galleryItems: ProductGalleryItem[] = [
 
 // All images from videos folder
 const productImages: ProductGalleryItem[] = [
-  {
-    id: 'img-1',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/005aa14d-02b4-4478-aaee-818531745588.JPG',
-  },
-  {
-    id: 'img-2',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/03c5e27a-3659-405d-b42c-4d9072ada5c4.JPG',
-  },
-  {
-    id: 'img-3',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/097008b2-877f-4696-a03e-2c5f5bf01101.JPG',
-  },
-  {
-    id: 'img-4',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/0e3166c0-ed57-4579-a212-49766f7b1bc4.JPG',
-  },
-  {
-    id: 'img-5',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/11bda2dc-ea38-4c31-96ea-90d35bc8b869.JPG',
-  },
-  {
-    id: 'img-6',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/2eee404f-6f67-4bb8-8ce7-c07e7044495b.JPG',
-  },
-  {
-    id: 'img-7',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/38345c7f-b0a7-4027-b76f-c1acd3e37b5c.JPG',
-  },
-  {
-    id: 'img-8',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/39abe002-d612-4fd3-b6ac-5ff790a6e5ef.JPG',
-  },
-  {
-    id: 'img-9',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/3a683ac5-aec2-4097-b380-9937f6b70db0.JPG',
-  },
-  {
-    id: 'img-10',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/3a7880ef-e471-4717-af6d-cbc7d3fa809a.JPG',
-  },
-  {
-    id: 'img-11',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/61d79016-9646-4100-b005-13fcd40fe3b0.JPG',
-  },
-  {
-    id: 'img-12',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/82dad19d-58e4-41ec-97d9-6ea6a0eb93a2.JPG',
-  },
-  {
-    id: 'img-13',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/897e94af-a84e-48d8-9f80-d4eae54dedb2.JPG',
-  },
-  {
-    id: 'img-14',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/905fca9a-b289-4008-9858-cef0e636ab03.JPG',
-  },
-  {
-    id: 'img-15',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/983faa8c-5cb5-47b0-b49b-1cb5e460272e.JPG',
-  },
-  {
-    id: 'img-16',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/aff8e861-5a60-4d2c-9210-f6126e831da2.JPG',
-  },
-  {
-    id: 'img-17',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/cc57b69f-bc7d-45f6-a299-673fcc2405a9.JPG',
-  },
-  {
-    id: 'img-18',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/eb145535-4d38-40cc-931b-a6235e5f629c.JPG',
-  },
-  {
-    id: 'img-19',
-    product: 'Product Photos',
-    type: 'image',
-    path: '/videos/f1999060-53ab-4887-b12d-a83ed9ceaa50.JPG',
-  },
+  { id: 'img-1', product: 'Product Photos', type: 'image', path: '/videos/005aa14d-02b4-4478-aaee-818531745588.JPG' },
+  { id: 'img-2', product: 'Product Photos', type: 'image', path: '/videos/03c5e27a-3659-405d-b42c-4d9072ada5c4.JPG' },
+  { id: 'img-3', product: 'Product Photos', type: 'image', path: '/videos/097008b2-877f-4696-a03e-2c5f5bf01101.JPG' },
+  { id: 'img-4', product: 'Product Photos', type: 'image', path: '/videos/0e3166c0-ed57-4579-a212-49766f7b1bc4.JPG' },
+  { id: 'img-5', product: 'Product Photos', type: 'image', path: '/videos/11bda2dc-ea38-4c31-96ea-90d35bc8b869.JPG' },
+  { id: 'img-6', product: 'Product Photos', type: 'image', path: '/videos/2eee404f-6f67-4bb8-8ce7-c07e7044495b.JPG' },
+  { id: 'img-7', product: 'Product Photos', type: 'image', path: '/videos/38345c7f-b0a7-4027-b76f-c1acd3e37b5c.JPG' },
+  { id: 'img-8', product: 'Product Photos', type: 'image', path: '/videos/39abe002-d612-4fd3-b6ac-5ff790a6e5ef.JPG' },
+  { id: 'img-9', product: 'Product Photos', type: 'image', path: '/videos/3a683ac5-aec2-4097-b380-9937f6b70db0.JPG' },
+  { id: 'img-10', product: 'Product Photos', type: 'image', path: '/videos/3a7880ef-e471-4717-af6d-cbc7d3fa809a.JPG' },
+  { id: 'img-11', product: 'Product Photos', type: 'image', path: '/videos/61d79016-9646-4100-b005-13fcd40fe3b0.JPG' },
+  { id: 'img-12', product: 'Product Photos', type: 'image', path: '/videos/82dad19d-58e4-41ec-97d9-6ea6a0eb93a2.JPG' },
+  { id: 'img-13', product: 'Product Photos', type: 'image', path: '/videos/897e94af-a84e-48d8-9f80-d4eae54dedb2.JPG' },
+  { id: 'img-14', product: 'Product Photos', type: 'image', path: '/videos/905fca9a-b289-4008-9858-cef0e636ab03.JPG' },
+  { id: 'img-15', product: 'Product Photos', type: 'image', path: '/videos/983faa8c-5cb5-47b0-b49b-1cb5e460272e.JPG' },
+  { id: 'img-16', product: 'Product Photos', type: 'image', path: '/videos/aff8e861-5a60-4d2c-9210-f6126e831da2.JPG' },
+  { id: 'img-17', product: 'Product Photos', type: 'image', path: '/videos/cc57b69f-bc7d-45f6-a299-673fcc2405a9.JPG' },
+  { id: 'img-18', product: 'Product Photos', type: 'image', path: '/videos/eb145535-4d38-40cc-931b-a6235e5f629c.JPG' },
+  { id: 'img-19', product: 'Product Photos', type: 'image', path: '/videos/f1999060-53ab-4887-b12d-a83ed9ceaa50.JPG' },
 ];
 
 // Educational content for each product
@@ -324,12 +229,12 @@ const ProductKnowledge = () => {
     <section
       id="product-knowledge"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-gradient-to-b from-cream-50 to-cream-100 relative overflow-hidden"
+      className="py-24 lg:py-32 bg-cream-50 relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-full h-full opacity-3">
         <div className="absolute top-20 right-20 w-64 h-64 bg-gold-500 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-emerald-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-forest-500 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -347,10 +252,10 @@ const ProductKnowledge = () => {
               </span>
               <span className="w-10 h-px bg-forest-900/30" />
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
               See What We Sell
             </h2>
-            <p className="text-lg text-forest-700/70 font-serif italic max-w-2xl mx-auto">
+            <p className="text-lg text-forest-700/70 max-w-2xl mx-auto">
               Video showcases and images of our products from Northern Nigeria
             </p>
           </div>
@@ -394,7 +299,7 @@ const ProductKnowledge = () => {
                 onClick={() => handleOpenMedia(item)}
               >
                 {/* Media Thumbnail */}
-                <div className="relative h-56 bg-gradient-to-br from-forest-800 to-forest-900 flex items-center justify-center overflow-hidden">
+                <div className="relative h-56 bg-forest-950 flex items-center justify-center overflow-hidden">
                   {item.type === 'video' ? (
                     <>
                       <div className="absolute inset-0 bg-black/40" />
@@ -432,7 +337,7 @@ const ProductKnowledge = () => {
                       {item.type === 'video' ? '🎥 Video' : '🖼️ Image'}
                     </span>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-forest-900 group-hover:text-gold-600 transition-colors">
+                  <h3 className="text-lg font-bold text-forest-900 group-hover:text-gold-600 transition-colors">
                     {item.description}
                   </h3>
                 </div>
@@ -455,7 +360,7 @@ const ProductKnowledge = () => {
               </span>
               <span className="w-10 h-px bg-forest-900/30" />
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900">
               Images
             </h2>
           </div>
@@ -494,10 +399,10 @@ const ProductKnowledge = () => {
               </span>
               <span className="w-10 h-px bg-forest-900/30" />
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
               Learn About Our Products
             </h2>
-            <p className="text-lg text-forest-700/70 font-serif italic max-w-2xl mx-auto">
+            <p className="text-lg text-forest-700/70 max-w-2xl mx-auto">
               Origin, harvest, storage, quality standards, and availability
             </p>
           </div>
@@ -521,7 +426,7 @@ const ProductKnowledge = () => {
                   }
                   className="w-full p-6 flex items-center justify-between hover:bg-cream-50 transition-colors duration-300"
                 >
-                  <h3 className="font-serif text-2xl font-bold text-forest-900">
+                  <h3 className="text-2xl font-bold text-forest-900">
                     {edu.product}
                   </h3>
                   <svg
@@ -541,7 +446,7 @@ const ProductKnowledge = () => {
                   <div className="px-6 pb-6 border-t-2 border-forest-100 space-y-6">
                     {/* Origin */}
                     <div>
-                      <h4 className="font-serif text-lg font-bold text-gold-600 mb-2">
+                      <h4 className="text-lg font-bold text-gold-600 mb-2">
                         📍 Origin: {edu.origin}
                       </h4>
                       <p className="text-forest-700/80 leading-relaxed">{edu.origin_detail}</p>
@@ -553,9 +458,9 @@ const ProductKnowledge = () => {
                         <h5 className="font-semibold text-amber-900 mb-1">🌾 Harvest Season</h5>
                         <p className="text-amber-800/80 text-sm">{edu.harvest_season}</p>
                       </div>
-                      <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
-                        <h5 className="font-semibold text-emerald-900 mb-1">📦 Quantity Available</h5>
-                        <p className="text-emerald-800/80 text-sm font-medium">{edu.quantity_available}</p>
+                      <div className="p-4 bg-forest-50 border border-forest-200 rounded-lg">
+                        <h5 className="font-semibold text-forest-900 mb-1">📦 Quantity Available</h5>
+                        <p className="text-forest-800/80 text-sm font-medium">{edu.quantity_available}</p>
                       </div>
                     </div>
 
@@ -584,9 +489,9 @@ const ProductKnowledge = () => {
           <div className="w-full max-w-4xl">
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
               {/* Header */}
-              <div className="bg-gradient-to-r from-forest-900 to-forest-950 text-white p-4 flex items-center justify-between">
+              <div className="bg-forest-950 text-white p-4 flex items-center justify-between">
                 <div>
-                  <h3 className="font-serif text-lg font-bold">{selectedItem.description}</h3>
+                  <h3 className="text-lg font-bold">{selectedItem.description}</h3>
                   <p className="text-gold-300 text-sm">{selectedItem.product}</p>
                 </div>
                 <button

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Review data – 3 customer testimonials with star ratings.
+ * Review data – 4 customer testimonials with star ratings.
  */
 interface Review {
   id: number;
@@ -88,7 +88,7 @@ const Reviews = () => {
     <section
       id="reviews"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-cream-100 relative overflow-hidden"
+      className="py-24 lg:py-32 bg-cream-50 relative overflow-hidden"
     >
       {/* Subtle background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-60" />
@@ -108,7 +108,7 @@ const Reviews = () => {
             </span>
             <span className="w-10 h-px bg-gold-500" />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
             What Our Global Partners Say
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -144,7 +144,7 @@ const Reviews = () => {
                 <StarRating rating={review.rating} />
 
                 {/* Quote */}
-                <blockquote className="mt-4 mb-6 text-gray-600 leading-relaxed text-sm italic">
+                <blockquote className="mt-4 mb-6 text-gray-600 leading-relaxed text-sm">
                   "{review.quote}"
                 </blockquote>
               </div>

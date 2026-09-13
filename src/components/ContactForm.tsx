@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, type FormEvent, type ChangeEvent } from 'react';
+import { useLocation } from 'react-router-dom';
 import { SITE } from '../constants/site';
 
 /**
@@ -31,6 +32,7 @@ const productOptions = [
 ];
 
 const ContactForm = () => {
+  const location = useLocation();
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -54,6 +56,13 @@ const ContactForm = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const selectedProduct = (location.state as { productName?: string } | null)?.productName;
+    if (selectedProduct) {
+      setFormData((prev) => ({ ...prev, product: selectedProduct }));
+    }
+  }, [location.state]);
 
   // Listen for product pre-selection from product cards
   useEffect(() => {
@@ -152,9 +161,9 @@ const ContactForm = () => {
               </span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-6 leading-tight">
               Send Us an{' '}
-              <span className="text-gold-600 italic">Enquiry</span>
+              <span className="text-gold-600">Enquiry</span>
             </h2>
 
             <p className="text-gray-600 leading-relaxed mb-8">
@@ -221,7 +230,7 @@ const ContactForm = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-forest-900 mb-3">
+                  <h3 className="text-2xl font-bold text-forest-900 mb-3">
                     Enquiry Sent!
                   </h3>
                   <p className="text-gray-500">

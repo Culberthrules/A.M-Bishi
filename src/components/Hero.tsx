@@ -1,6 +1,7 @@
 /**
  * Hero Section Component
  * Full-screen hero with background image, headline, subtitle, and CTA button.
+ * Trust badges have been moved to the SlidingBanner component.
  */
 const Hero = () => {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -14,7 +15,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest-950 pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest-950 pt-28"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -35,34 +36,16 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 lg:py-28">
-        {/* Section Index & Trust Badge Header */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8 animate-fade-in">
-          <span className="font-mono text-xs text-gold-400 font-bold bg-gold-500/10 border border-gold-500/30 px-3 py-1 rounded-full uppercase tracking-widest">
-            01 — AMA BISHI LTD
-          </span>
-          <span className="hidden sm:inline text-gold-500/40">•</span>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 bg-forest-900/90 border border-emerald-500/40 text-emerald-300 text-xs font-mono px-3 py-1 rounded-full shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              LAB VERIFIED
-            </span>
-            <span className="inline-flex items-center gap-1.5 bg-forest-900/90 border border-gold-500/40 text-gold-300 text-xs font-mono px-3 py-1 rounded-full shadow-sm">
-              100% LAB-TESTED LOTS
-            </span>
-          </div>
-        </div>
-
-        {/* Main Headline */}
-        <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up leading-[1.1] tracking-tight">
-          Trade without the <span className="text-gold-400 italic font-serif">guesswork.</span>
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 animate-fade-in-up leading-[1.1] tracking-tight">
+          Premium African <span className="text-gold-400">Commodities,</span>{' '}
+          <span className="block">Verified Quality.</span>
         </h1>
 
-        {/* Sub-headline */}
-        <p className="text-base sm:text-xl text-cream-200/90 max-w-3xl mx-auto mb-6 animate-fade-in-up animate-delay-200 leading-relaxed font-sans">
-          Premium African agricultural commodities sourced directly from Northern Nigeria with accredited laboratory certificates on file. Zero physical sample waste, zero friction.
+        <p className="text-base sm:text-xl text-cream-200/90 max-w-3xl mx-auto mb-6 animate-fade-in-up animate-delay-200 leading-relaxed">
+          Export-grade agricultural ingredients sourced directly from Northern Nigeria, with clear quality checks and dependable supply behind every shipment.
         </p>
 
-        <p className="text-xs sm:text-sm text-gold-400/80 uppercase font-mono tracking-wider mb-10 animate-fade-in-up animate-delay-300">
+        <p className="text-xs sm:text-sm text-gold-400/80 uppercase tracking-wider mb-10 animate-fade-in-up animate-delay-300">
           Display & B2B Inquiry Portal • Direct Bulk Supply
         </p>
 
@@ -97,7 +80,7 @@ const Hero = () => {
             onClick={(e) => handleScrollTo(e, 'products')}
             className="inline-flex flex-col items-center gap-2 text-cream-300/60 hover:text-gold-400 transition-colors group"
           >
-            <span className="text-xs tracking-widest uppercase font-mono">Explore Catalog</span>
+            <span className="text-xs tracking-widest uppercase">Explore Catalog</span>
             <div className="w-6 h-10 border-2 border-cream-300/30 group-hover:border-gold-400/60 rounded-full flex justify-center pt-2 transition-colors">
               <div className="w-1.5 h-1.5 bg-gold-400 rounded-full animate-bounce" />
             </div>

@@ -37,9 +37,8 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-            }`}
+            className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}
           >
             {/* Section Label */}
             <div className="flex items-center gap-3 mb-6">
@@ -49,9 +48,9 @@ const About = () => {
               </span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-6 leading-tight">
               Authentic African Naturals,{' '}
-              <span className="text-gold-600 italic">Trusted Worldwide.</span>
+              <span className="text-gold-600">Trusted Worldwide.</span>
             </h2>
 
             <div className="space-y-4 text-gray-600 leading-relaxed">
@@ -96,9 +95,8 @@ const About = () => {
 
           {/* Side Image */}
           <div
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
+            className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}
           >
             {/* Decorative background shape */}
             <div className="absolute -top-6 -right-6 w-full h-full bg-gold-100 rounded-2xl" />

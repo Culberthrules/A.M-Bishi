@@ -5,7 +5,6 @@
    ============================================ */
 
 @theme {
-  /* Deep forest green palette */
   --color-forest-950: #0a1f1a;
   --color-forest-900: #0f2c24;
   --color-forest-800: #1a3c34;
@@ -18,7 +17,6 @@
   --color-forest-100: #d4ece5;
   --color-forest-50: #edf7f4;
 
-  /* Rich gold palette */
   --color-gold-900: #7a5e0a;
   --color-gold-800: #9a7710;
   --color-gold-700: #b8901a;
@@ -30,21 +28,17 @@
   --color-gold-100: #f7efd0;
   --color-gold-50: #fcf8eb;
 
-  /* Cream and warm neutrals */
   --color-cream-50: #fefdfb;
   --color-cream-100: #fdf9f0;
   --color-cream-200: #faf3e0;
   --color-cream-300: #f5e8c8;
   --color-cream-400: #edd9a8;
 
-  /* Terracotta accents */
   --color-terra-600: #b85c3a;
   --color-terra-500: #cc6b45;
   --color-terra-400: #d98a6a;
   --color-terra-300: #e5a98f;
 
-  /* Typography */
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -116,3 +110,25 @@ body {
 .animate-delay-400 { animation-delay: 400ms; }
 .animate-delay-500 { animation-delay: 500ms; }
 .animate-delay-600 { animation-delay: 600ms; }
+
+/* ============================================
+   Sliding Banner Marquee
+   ============================================ */
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+}
+
+.marquee-track {
+  animation: marquee-scroll 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}

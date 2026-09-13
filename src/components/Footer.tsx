@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SITE } from '../constants/site';
 
 /**
@@ -16,43 +17,43 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: 'Home', target: 'home' },
-    { label: 'About Us', target: 'about' },
-    { label: 'Products', target: 'products' },
-    { label: 'Certifications', target: 'certifications' },
-    { label: 'Reviews', target: 'reviews' },
-    { label: 'Contact', target: 'contact' },
+    { label: 'Home', to: '/' },
+    { label: 'About Us', to: '/about' },
+    { label: 'Products', to: '/products' },
+    { label: 'Process', to: '/process' },
+    { label: 'Gallery', to: '/gallery' },
+    { label: 'Product Knowledge', to: '/product-knowledge' },
+    { label: 'Certifications', to: '/certifications' },
+    { label: 'Reviews', to: '/reviews' },
+    { label: 'Contact', to: '/contact' },
   ];
 
   return (
     <footer className="bg-forest-950 text-cream-300 relative overflow-hidden">
-      <div className="h-1 bg-gradient-to-r from-forest-800 via-gold-500 to-forest-800" />
+      {/* Accent line */}
+      <div className="h-px bg-gold-500/30" />
 
-      {/* High-Contrast Closing CTA Banner */}
-      <div className="bg-gradient-to-r from-forest-900 via-forest-800 to-forest-900 border-b border-white/10 py-16 px-4 sm:px-6 lg:px-8">
+      {/* Closing CTA Banner */}
+      <div className="bg-forest-950 border-b border-white/10 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <span className="font-mono text-xs text-gold-400 font-semibold uppercase tracking-[0.2em] bg-gold-500/10 border border-gold-500/30 px-3.5 py-1.5 rounded-full inline-block mb-4">
+          <span className="text-xs text-gold-400 font-semibold uppercase tracking-[0.2em] bg-gold-500/10 border border-gold-500/30 px-3.5 py-1.5 rounded-full inline-block mb-4">
             Start Your Trade Inquiry
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Ready to trade without the guesswork?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Ready to source premium African commodities?
           </h2>
           <p className="text-cream-200/80 text-base sm:text-lg max-w-2xl mx-auto mb-8">
             Access lab-verified certificate parameters and request competitive bulk export quotes directly from <strong className="text-gold-400">AMA BISHI LTD</strong>.
           </p>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-forest-950 font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/30 hover:-translate-y-0.5"
           >
             Make an Inquiry
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -61,7 +62,7 @@ const Footer = () => {
           {/* Column 1 – Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <span className="font-serif text-2xl font-bold text-gold-500">
+              <span className="text-2xl font-bold text-gold-500">
                 {SITE.name}
               </span>
               <p className="text-xs text-cream-400 tracking-[0.15em] uppercase mt-0.5">
@@ -101,14 +102,14 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
-                <li key={link.target}>
-                  <a
-                    href={`#${link.target}`}
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
                     className="text-sm text-cream-400 hover:text-gold-400 transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-3 h-px bg-gold-400 transition-all duration-300" />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

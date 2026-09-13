@@ -41,7 +41,7 @@ const Certifications = () => {
       <section
         id="certifications"
         ref={sectionRef}
-        className="py-24 lg:py-32 bg-white relative overflow-hidden"
+        className="py-24 lg:py-32 bg-cream-50 relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
@@ -57,7 +57,7 @@ const Certifications = () => {
               </span>
               <span className="w-10 h-px bg-gold-500" />
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-900 mb-4">
               Our Certifications
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
@@ -73,7 +73,7 @@ const Certifications = () => {
                 key={cert.src}
                 type="button"
                 onClick={() => setActiveCert(cert)}
-                className={`group text-left bg-cream-50 rounded-2xl overflow-hidden border border-forest-100 shadow-lg shadow-forest-900/5 transition-all duration-700 hover:shadow-xl hover:shadow-forest-900/10 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 ${
+                className={`group text-left bg-white rounded-2xl overflow-hidden border border-forest-100 shadow-lg shadow-forest-900/5 transition-all duration-700 hover:shadow-xl hover:shadow-forest-900/10 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -102,7 +102,7 @@ const Certifications = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-serif text-lg font-bold text-forest-900 mb-1 group-hover:text-gold-600 transition-colors">
+                      <h3 className="text-lg font-bold text-forest-900 mb-1 group-hover:text-gold-600 transition-colors">
                         {cert.title}
                       </h3>
                       <p className="text-xs text-gold-600 font-medium mb-2">{cert.issuer}</p>
@@ -133,7 +133,7 @@ const Certifications = () => {
           <div className="relative z-10 max-w-4xl w-full max-h-[90vh] flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
               <div>
-                <h3 className="font-serif text-lg font-bold text-forest-900">{activeCert.title}</h3>
+                <h3 className="text-lg font-bold text-forest-900">{activeCert.title}</h3>
                 <p className="text-sm text-gold-600">{activeCert.issuer}</p>
               </div>
               <button
