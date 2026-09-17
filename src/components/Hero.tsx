@@ -72,20 +72,6 @@ const Hero = () => {
             </svg>
           </a>
         </div>
-
-        {/* Bottom scroll hint */}
-        <div className="mt-16 animate-fade-in animate-delay-600">
-          <a
-            href="#products"
-            onClick={(e) => handleScrollTo(e, 'products')}
-            className="inline-flex flex-col items-center gap-2 text-cream-300/60 hover:text-gold-400 transition-colors group"
-          >
-            <span className="text-xs tracking-widest uppercase">Explore Catalog</span>
-            <div className="w-6 h-10 border-2 border-cream-300/30 group-hover:border-gold-400/60 rounded-full flex justify-center pt-2 transition-colors">
-              <div className="w-1.5 h-1.5 bg-gold-400 rounded-full animate-bounce" />
-            </div>
-          </a>
-        </div>
       </div>
     </section>
   );
