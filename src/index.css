@@ -56,6 +56,20 @@ body {
   background-color: var(--color-cream-50);
 }
 
+button,
+input,
+textarea,
+select,
+a[role='button'],
+[class*='rounded'],
+[class*='rounded-'],
+[role='dialog'],
+.card,
+.panel,
+.modal {
+  border-radius: 0 !important;
+}
+
 /* Custom scrollbar for a premium feel */
 ::-webkit-scrollbar {
   width: 8px;
