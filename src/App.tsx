@@ -24,9 +24,9 @@ const ScrollToTop = () => {
 
 const HomePage = () => (
   <>
+    <About />
     <Hero />
     <Products />
-    <About />
   </>
 );
 
