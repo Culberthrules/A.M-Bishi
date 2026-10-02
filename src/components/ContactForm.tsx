@@ -33,6 +33,7 @@ const productOptions = [
 
 const ContactForm = () => {
   const location = useLocation();
+  const selectedProduct = (location.state as { productName?: string } | null)?.productName;
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -40,7 +41,7 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
-    product: 'General Enquiry',
+    product: selectedProduct ?? 'General Enquiry',
     message: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -56,13 +57,6 @@ const ContactForm = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    const selectedProduct = (location.state as { productName?: string } | null)?.productName;
-    if (selectedProduct) {
-      setFormData((prev) => ({ ...prev, product: selectedProduct }));
-    }
-  }, [location.state]);
 
   // Listen for product pre-selection from product cards
   useEffect(() => {

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /**
  * Hero Section Component
  * Full-screen hero with background image, headline, subtitle, and CTA button.
@@ -51,16 +53,15 @@ const Hero = () => {
 
         {/* Dual CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-400">
-          <a
-            href="#contact"
-            onClick={(e) => handleScrollTo(e, 'contact')}
+          <Link
+            to="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-600 hover:bg-gold-500 text-forest-950 font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/30 hover:-translate-y-0.5 active:translate-y-0"
           >
             Make an Inquiry
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </Link>
           <a
             href="#products"
             onClick={(e) => handleScrollTo(e, 'products')}

@@ -31,6 +31,7 @@ export interface Certificate {
   title: string;
   description: string;
   issuer: string;
+  format?: 'pdf';
 }
 
 export const CERTIFICATES: Certificate[] = [
@@ -47,5 +48,26 @@ export const CERTIFICATES: Certificate[] = [
     description:
       'Independent laboratory analysis confirming purity, moisture, oil content, and aflatoxin levels.',
     issuer: 'Famousa Lab',
+  },
+  {
+    src: '/docs/certificates/1075985-Ama_Bishi_Ltd-Chemistry2.pdf',
+    title: 'Chemistry Analysis Report 2',
+    description: 'Laboratory chemistry analysis report for AMA BISHI LTD.',
+    issuer: 'Laboratory Analysis',
+    format: 'pdf',
+  },
+  {
+    src: '/docs/certificates/1075985-Ama_Bishi_Ltd-Chemistry3.pdf',
+    title: 'Chemistry Analysis Report 3',
+    description: 'Laboratory chemistry analysis report for AMA BISHI LTD.',
+    issuer: 'Laboratory Analysis',
+    format: 'pdf',
+  },
+  {
+    src: '/docs/certificates/1075985-Ama_Bishi_Ltd-Pesticide.pdf',
+    title: 'Pesticide Analysis Report',
+    description: 'Laboratory pesticide analysis report for AMA BISHI LTD.',
+    issuer: 'Laboratory Analysis',
+    format: 'pdf',
   },
 ];

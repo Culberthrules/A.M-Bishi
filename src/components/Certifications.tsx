@@ -82,12 +82,21 @@ const Certifications = () => {
                 aria-label={`View ${cert.title}`}
               >
                 <div className="relative h-64 overflow-hidden bg-gray-100">
-                  <img
-                    src={cert.src}
-                    alt={cert.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                  {cert.format === 'pdf' ? (
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-forest-50 text-forest-800">
+                      <svg className="w-14 h-14 text-gold-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7 3.75h6l4.25 4.5v12A.75.75 0 0 1 16.5 21h-9a.75.75 0 0 1-.75-.75v-15A1.5 1.5 0 0 1 8.25 3.75ZM13 4v4.5h4.25M9 13h6m-6 3h6" />
+                      </svg>
+                      <span className="text-xs font-bold tracking-widest uppercase">PDF Certificate</span>
+                    </div>
+                  ) : (
+                    <img
+                      src={cert.src}
+                      alt={cert.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-forest-950/0 group-hover:bg-forest-950/20 transition-colors duration-300 flex items-center justify-center">
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 text-forest-800 text-sm font-medium px-4 py-2 rounded-full shadow-lg">
                       View Certificate
@@ -136,23 +145,43 @@ const Certifications = () => {
                 <h3 className="text-lg font-bold text-forest-900">{activeCert.title}</h3>
                 <p className="text-sm text-gold-600">{activeCert.issuer}</p>
               </div>
-              <button
-                type="button"
-                onClick={() => setActiveCert(null)}
-                className="w-10 h-10 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors"
-                aria-label="Close"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              <div className="flex items-center gap-2">
+                {activeCert.format === 'pdf' && (
+                  <a
+                    href={activeCert.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-3 py-2 text-sm font-medium text-forest-800 hover:bg-gray-100 rounded-lg"
+                  >
+                    Open PDF
+                  </a>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setActiveCert(null)}
+                  className="w-10 h-10 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors"
+                  aria-label="Close"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
             <div className="overflow-auto flex-1 bg-gray-50 p-4">
-              <img
-                src={activeCert.src}
-                alt={activeCert.title}
-                className="w-full h-auto rounded-lg shadow-md"
-              />
+              {activeCert.format === 'pdf' ? (
+                <iframe
+                  src={activeCert.src}
+                  title={activeCert.title}
+                  className="w-full h-full min-h-[60vh] rounded-lg border-0"
+                />
+              ) : (
+                <img
+                  src={activeCert.src}
+                  alt={activeCert.title}
+                  className="w-full h-auto rounded-lg shadow-md"
+                />
+              )}
             </div>
           </div>
         </div>
