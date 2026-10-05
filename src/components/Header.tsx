@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SlidingBanner from './SlidingBanner';
 
@@ -7,16 +7,7 @@ import SlidingBanner from './SlidingBanner';
  * Sticky navigation with logo, nav links, country flags, and mobile hamburger menu.
  */
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { label: 'Home', to: '/' },
@@ -36,9 +27,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-forest-950/95 backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-forest-950/95 backdrop-blur-sm border-b border-white/10 transition-all duration-300"
     >
       <SlidingBanner />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,19 +93,19 @@ const Header = () => {
       </div>
 
       <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-[42rem] opacity-100' : 'max-h-0 opacity-0'}`}>
-        <nav className="bg-forest-950/98 backdrop-blur-lg border-t border-white/10 px-4 py-4 space-y-2">
+        <nav className="bg-forest-950 text-cream-50 border-t border-white/10 px-4 py-4 space-y-2 shadow-2xl">
           {navLinks.map((link) => (
             <div key={link.to}>
               {link.label === 'Gallery' ? (
-                <div className="rounded-lg border border-white/10 bg-white/3">
-                  <div className="px-4 py-3 text-cream-200 font-medium">{link.label}</div>
+                <div className="rounded-lg border border-white/10 bg-forest-900/90">
+                  <div className="px-4 py-3 text-cream-50 font-medium">{link.label}</div>
                   <div className="px-2 pb-2 space-y-1">
                     {galleryLinks.map((innerLink) => (
                       <Link
                         key={innerLink.to}
                         to={innerLink.to}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block px-4 py-2 text-sm text-cream-200 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors"
+                        className="block px-4 py-2 text-sm text-cream-50 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors"
                       >
                         {innerLink.label}
                       </Link>
@@ -127,7 +116,7 @@ const Header = () => {
                 <Link
                   to={link.to}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-cream-200 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium"
+                  className="block px-4 py-3 text-cream-50 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium"
                 >
                   {link.label}
                 </Link>
