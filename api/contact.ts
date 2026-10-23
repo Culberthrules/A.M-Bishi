@@ -99,11 +99,8 @@ export default async function handler(request: Request): Promise<Response> {
     });
 
     if (!response.ok) {
-      console.error(
-        'Contact email delivery failed:',
-        response.status,
-        await response.text()
-      );
+      const details = await response.text();
+      console.error('Resend email request failed:', response.status, details);
       return jsonResponse(
         { error: 'We could not send your enquiry. Please try again or email enquiry@amabishi.co.uk.' },
         502
@@ -112,7 +109,7 @@ export default async function handler(request: Request): Promise<Response> {
   } catch (error) {
     console.error(
       'Contact email delivery failed:',
-      error instanceof Error ? error.message : 'Unknown email API error'
+      error instanceof Error ? error.message : 'Unknown Resend API error'
     );
     return jsonResponse(
       { error: 'We could not send your enquiry. Please try again or email enquiry@amabishi.co.uk.' },
