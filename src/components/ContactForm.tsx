@@ -37,6 +37,8 @@ const ContactForm = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -104,26 +106,52 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     if (!validate()) return;
 
-    // Log form data (no backend required)
-    console.log('Enquiry submitted:', formData);
-    setIsSubmitted(true);
-
-    // Reset form after 4 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        product: 'General Enquiry',
-        message: '',
+    setIsSubmitting(true);
+    setSubmitError('');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-    }, 4000);
+
+      if (!response.ok) {
+        const result: unknown = await response.json().catch(() => null);
+        const message =
+          typeof result === 'object' &&
+          result !== null &&
+          'error' in result &&
+          typeof result.error === 'string'
+            ? result.error
+            : 'We could not send your enquiry. Please try again or email enquiry@amabishi.co.uk.';
+        throw new Error(message);
+      }
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          product: 'General Enquiry',
+          message: '',
+        });
+      }, 4000);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'We could not send your enquiry. Please try again or email enquiry@amabishi.co.uk.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputBaseClass =
@@ -234,6 +262,12 @@ const ContactForm = () => {
               ) : (
                 /* Form */
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  {submitError && (
+                    <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      {submitError}
+                    </p>
+                  )}
+
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -346,9 +380,10 @@ const ContactForm = () => {
                   <button
                     type="submit"
                     id="submit-enquiry"
+                    disabled={isSubmitting}
                     className="w-full bg-forest-800 hover:bg-forest-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-forest-900/20 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
                   >
-                    Send Enquiry
+                    {isSubmitting ? 'Sending…' : 'Send Enquiry'}
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
