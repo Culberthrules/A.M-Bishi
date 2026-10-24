@@ -1,11 +1,14 @@
-import { env } from 'node:process';
-import type { IncomingMessage, ServerResponse } from 'node:http';
+declare const process: {
+  env: Record<string, string | undefined>;
+};
 
-interface ContactRequest extends IncomingMessage {
+interface ContactRequest {
+  method?: string;
+  headers: Record<string, string | string[] | undefined>;
   body?: unknown;
 }
 
-interface ContactResponse extends ServerResponse {
+interface ContactResponse {
   status(code: number): ContactResponse;
   json(body: unknown): ContactResponse;
 }
@@ -79,7 +82,7 @@ export default async function handler(
     return;
   }
 
-  const apiKey = env.RESEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
     console.error('Resend API key is missing.');
