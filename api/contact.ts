@@ -1,3 +1,5 @@
+import { env } from 'node:process';
+
 interface ContactPayload {
   name: string;
   email: string;
@@ -66,7 +68,7 @@ export default async function handler(request: Request): Promise<Response> {
     return jsonResponse({ error: 'Please check the enquiry details and try again.' }, 400);
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = env.RESEND_API_KEY;
 
   if (!apiKey) {
     console.error('Resend API key is missing.');
